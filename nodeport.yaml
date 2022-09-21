@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: rahul-finalapp
+  name: rahul-finalapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rahul-finalapp
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: rahul-finalapp
+    spec:
+      containers:
+      - image: apptestrahul007/rahulmobiwebapp:version7
+        name: rahulmobiwebapp
+        ports:
+        - containerPort: 80
+        res
