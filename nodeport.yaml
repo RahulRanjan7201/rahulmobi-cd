@@ -1,25 +1,18 @@
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: v1
+kind: Service
 metadata:
   creationTimestamp: null
   labels:
-    app: rahul-finalapp
-  name: rahul-finalapp
+    app: rahullb777
+  name: rahullb777
 spec:
-  replicas: 1
+  ports:
+  - name: 1234-80
+    port: 1234
+    protocol: TCP
+    targetPort: 80
   selector:
-    matchLabels:
-      app: rahul-finalapp
-  strategy: {}
-  template:
-    metadata:
-      creationTimestamp: null
-      labels:
-        app: rahul-finalapp
-    spec:
-      containers:
-      - image: apptestrahul007/rahulmobiwebapp:version7
-        name: rahulmobiwebapp
-        ports:
-        - containerPort: 80
-        res
+    app: rahullb777
+  type: NodePort
+status:
+  loadBalancer: {}
